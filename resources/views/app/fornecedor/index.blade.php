@@ -56,3 +56,21 @@ Status: {{ $fornecedores2[0]['status'] }}
 @endempty
 
 <br>
+
+<!-- se a variavel nao tiver definida ou for null, valor default -->
+CNPJ: {{ $fornecedores2[1]['cnpj'] ?? 'Dado não preenchido'}}
+
+Telefone: ({{ $fornecedores2[1]['ddd'] ?? ''}}) {{ $fornecedores2[1]['telefone'] ?? ''}}
+@switch($fornecedores2[2]['ddd'])
+    @case ('11')
+        São Paulo - SP
+        @break
+    @case ('85')
+        Fortaleza - CE
+        @break
+    @case ('21')
+        Rio de Janeiro - RJ
+        @break
+    @default
+        Nenhum lugar
+@endswitch()

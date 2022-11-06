@@ -73,4 +73,79 @@ Telefone: ({{ $fornecedores2[1]['ddd'] ?? ''}}) {{ $fornecedores2[1]['telefone']
         @break
     @default
         Nenhum lugar
-@endswitch()
+@endswitch
+
+
+@isset($fornecedores2)
+    @for($i = 0; isset($fornecedores2[$i]); $i++)
+        Fornecedor: {{ $fornecedores2[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores2[$i]['status'] }}
+        <br>
+        CNPJ: {{ $fornecedores2[$i]['cnpj'] }}
+        <br>
+        Telefone: ({{ $fornecedores2[$i]['ddd'] ?? ''}}) {{ $fornecedores2[$i]['telefone'] ?? ''}}
+        <hr>
+    @endfor
+@endisset
+
+@isset($fornecedores2)
+    @php $i = 0 @endphp
+    @while(isset($fornecedores2[$i]))
+        Fornecedor: {{ $fornecedores2[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores2[$i]['status'] }}
+        <br>
+        CNPJ: {{ $fornecedores2[$i]['cnpj'] }}
+        <br>
+        Telefone: ({{ $fornecedores2[$i]['ddd'] ?? ''}}) {{ $fornecedores2[$i]['telefone'] ?? ''}}
+        @php $i++ @endphp
+        <hr>
+    @endwhile
+@endisset
+
+@isset($fornecedores2)
+    @foreach($fornecedores2 as $indice => $fornecedor)
+        Iteração atual: {{ $loop->iteration }}
+        <br>
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] }}
+        <br>
+        Telefone: ({{ $fornecedor['ddd'] ?? ''}}) {{ $fornecedores2[$i]['telefone'] ?? ''}}
+        <br>
+        @if($loop->first)
+            Primeira iteração do Loop
+        @endif
+
+        @if($loop->last)
+            Última iteração do Loop
+            <br>
+            Total de registros: {{$loop->count}}
+        @endif
+
+        @dd($loop)
+        <hr>
+    @endforeach
+@endisset
+
+@isset($fornecedores3)
+    @forelse($fornecedores3 as $indice => $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] }}
+        <br>
+        Telefone: ({{ $fornecedor['ddd'] ?? ''}}) {{ $fornecedores2[$i]['telefone'] ?? ''}}
+        <hr>
+    @empty
+        'nao existem fornecedores cadastrados'
+    @endforelse
+@endisset
+
+<!-- escape chaves @{{}} --> 
+
+

@@ -147,5 +147,3 @@ Telefone: ({{ $fornecedores2[1]['ddd'] ?? ''}}) {{ $fornecedores2[1]['telefone']
 @endisset
 
 <!-- escape chaves @{{}} --> 
-
-

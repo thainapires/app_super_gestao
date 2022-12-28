@@ -8,9 +8,9 @@
         </select>
         {{ $errors->has('produto_id') ?  $errors->first('produto_id') : ''}}
 
-    @if(isset($pedido->id))
-        <button type="submit" class="borda-preta">Editar</button>
-    @else
+        <input type="number" name="quantidade" value="{{ old('quantidade') ? old('quantidade') : ''}}" placeholder="Quantidade" class="borda-preta" > 
+        {{ $errors->has('quantidade') ?  $errors->first('quantidade') : ''}}
+
         <button type="submit" class="borda-preta">Cadastrar</button>
-    @endif
+    
     </form>

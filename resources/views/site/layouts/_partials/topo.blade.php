@@ -18,7 +18,7 @@
         </form>-->
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-dark me-2">Login</button>
+          <button type="button" onclick="window.location='{{ route("site.login") }}'" class="btn btn-outline-dark me-2">Login</button>
           <!--<button type="button" class="btn btn-warning">Sign-up</button>-->
         </div>
       </div>

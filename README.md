@@ -8,6 +8,10 @@
 
 > Olá, seja bem vindo(a)! Este repositório tem como intuito documentar meu progresso no curso de desenvolvimento web em laravel + vue que estou fazendo, a partir do mês de outubro de 2022.
 
+O App Super Gestão é uma aplicação web que possui como intuito fazer o gerenciamento básico de pedidos, produtos e respectivas informações para uma loja. 
+
+<img src="https://github.com/thainapires/app_super_gestao/blob/main/super-gestao.jpg" alt="super-gestao">
+
 ## 🚀 Feito com:
 
 [![Built with](https://skillicons.dev/icons?i=laravel)](https://skillicons.dev)
